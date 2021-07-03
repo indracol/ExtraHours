@@ -6,7 +6,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RequestHttpService {
-  private URL: String = `https://extra-hours-indra.herokuapp.com//api/`;
+  private URL: String = `https://extra-hours-indra.herokuapp.com/api/`;
   constructor( private HTTP: HttpClient ) { }
 
   userToken: any;
