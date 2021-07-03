@@ -1,0 +1,49 @@
+.card-body {
+    text-align: center;
+    margin-top: 45px;
+}
+
+.btn-success {
+  background-color: #007bff !important;
+  color: #fff;
+}
+
+mat-form-field {
+  width: 100%;
+  .mat-form-field-infix{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7) !important;
+    .form-control:disabled{
+      background-color: rgb(233, 236, 239, 0.3) !important;
+      cursor: not-allowed !important;
+    }
+  }
+  .icon-input{
+    position: absolute;
+    margin-left: 95%;
+    top: 50%;
+  }
+}
+
+.forms {
+  width: 95% !important;
+}
+
+.mat-form-field-custom{
+  width: 77%;
+  padding-right: 10px !important;
+}
+
+.mat-form-field-custom-button{
+  width: 42%;
+  padding-right: 10px !important;
+}
+
+.mat-form-field-custom-three-fields{
+  width: 25%;
+  padding-right: 10px !important;
+}
+
+.mat-raised-button {
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+}

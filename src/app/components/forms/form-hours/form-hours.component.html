@@ -1,0 +1,57 @@
+<div [formGroup]="forms" class="card-body">
+    <mat-form-field class="mat-form-field-custom">
+      <mat-label>Codigo de Empleado</mat-label>
+      <input  matInput
+              class="form-control forms"
+              formControlName="cod_user" required>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field-custom">
+      <mat-label>Nombre de Empleado</mat-label>
+      <input  matInput
+              class="form-control forms"
+              formControlName="name_user" required>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field-custom">
+      <mat-label>Numero de Caso</mat-label>
+      <input  matInput
+              class="form-control forms"
+              formControlName="number_case" required>
+    </mat-form-field>
+    <div>
+        <mat-form-field class="mat-form-field-custom-three-fields">
+          <mat-label>Fecha Inicial</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="initial_date" required>
+            <mat-datepicker-toggle matSuffix [for]="picker">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="mat-form-field-custom-three-fields">
+            <mat-label>Hora</mat-label>
+            <mat-select matNativeControl formControlName="initial_hour" required>
+              <mat-option value="" selected></mat-option>
+              <mat-option *ngFor="let hour of hours" value="{{hour}}">{{hour}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field class="mat-form-field-custom-three-fields">
+            <mat-label>Minuto</mat-label>
+            <mat-select matNativeControl formControlName="initial_minute" required>
+              <mat-option value="" selected></mat-option>
+              <mat-option *ngFor="let minute of minutes" value="{{minute}}">{{minute}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button color="warn" (click)="cancel()" >Cancelar</button>
+        <ng-container *ngIf="disabledTabs; else elseButton">
+          <button mat-raised-button (click)="add()" class="btn btn-success" cdkFocusInitial>
+            Añadir
+          </button>
+        </ng-container>
+        <ng-template #elseButton>
+          <button mat-raised-button (click)="edit()" class="btn btn-success" cdkFocusInitial>
+            Guardar
+          </button>
+        </ng-template>
+    </div>
+</div>
